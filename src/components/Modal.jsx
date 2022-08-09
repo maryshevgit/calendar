@@ -3,7 +3,7 @@ import Input from '../ui/Input'
 import Button from '../ui/Button'
 import { month } from '../hooks/useCalendar'
 import { useDispatch } from 'react-redux'
-import { addSelectItem, deleteItem } from '../redux/modalSlice'
+import { addSelectItem, deleteItem, deleteSelect } from '../redux/modalSlice'
 import {ReactComponent as Cancel} from '../assets/cancel.svg'
 import {ReactComponent as Arrow} from '../assets/arrow.svg'
 
@@ -34,6 +34,11 @@ const Modal = ({active, setActive, date, findItem}) => {
     setDescription('')
   }
 
+  const closeModal = () => {
+    dispatch(deleteSelect())
+    setActive(false)
+  }
+
   let monthSelect, day, fullYear
 
   const newDate = date.split("-")
@@ -50,9 +55,9 @@ const Modal = ({active, setActive, date, findItem}) => {
         <div className='modal__arrow'>
             <Arrow />
         </div>
-        <div className='modal__body'>
-          <div className='modal__close'>
-            <Cancel onClick={() => setActive(false)}/>
+        <div className='modal__body' onClick={(e) => e.stopPropagation()}>
+          <div className='modal__close' >
+            <Cancel onClick={closeModal}/>
           </div>
           <div >
               {findItem[0] && findItem[0].info 

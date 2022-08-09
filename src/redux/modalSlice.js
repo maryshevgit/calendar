@@ -37,9 +37,12 @@ const modalSlice = createSlice({
         deleteItem(state, action){
             state.selectItem = state.selectItem.filter(item => item.select !== action.payload)
         },
+        deleteSelect(state){
+            state.selected = null
+        }
     }
 })
 
-export const {selectModal, addSelectItem, deleteItem, updateItem } = modalSlice.actions
+export const {selectModal, addSelectItem, deleteItem, updateItem, deleteSelect } = modalSlice.actions
 
 export default modalSlice.reducer;

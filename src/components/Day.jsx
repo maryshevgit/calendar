@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectModal } from '../redux/modalSlice'
+import { deleteSelect, selectModal } from '../redux/modalSlice'
 import Modal from './Modal'
 
 const Day = ({col, index, daysShort, i }) => {
