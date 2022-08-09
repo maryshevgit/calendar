@@ -85,6 +85,7 @@ const Header = () => {
                   value={query} 
                   onChange={e => setQuery(e.target.value)} 
                   placeholder='Событие, дата или участник'
+                  className='input'
                 />
                 <div 
                   className={`header__search_cancel ${query ? 'active_cancel' : ''}`} 

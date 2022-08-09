@@ -73,9 +73,7 @@ const Modal = ({active, setActive, date, findItem}) => {
                       </div>
                       {names || findItem[0].name}
                     </div>
-                    <div className='modal__desc'>
-                      {description || findItem[0].desc}
-                    </div>
+                    
                   </div>
                 :
                   <div>
@@ -89,21 +87,29 @@ const Modal = ({active, setActive, date, findItem}) => {
                         onChange={e => setNames(e.target.value)} 
                         className='input' placeholder='Имена участников' />
                     </div>
-                    <textarea 
-                      value={description}
-                      onChange={e => setDescription(e.target.value)}
-                      className='input text-area' placeholder='Описание'
-                    />
                   </div>
               }
-
+              {findItem[0] && findItem[0].desc && findItem[0].info  
+                ?
+                  <div className='modal__desc'>
+                    {description || findItem[0].desc}
+                  </div>
+                :
+                <textarea 
+                  value={description}
+                  onChange={e => setDescription(e.target.value)}
+                  className='input text-area' placeholder='Описание'
+                />
+              }
+              
           </div>
           <div className='modal__buttons'>
             <Button 
-              className='calendar__today'
+              className={`calendar__today ${!(event && names) ? 'disabled_button' : ''}`}
               onClick={addEvent}
             >Готово</Button>
-            <Button className='calendar__today'
+            <Button 
+              className={`calendar__today ${!findItem[0] ? 'disabled_button' : ''}`}
               onClick={() => deleteEvent(findItem[0].select)}
             >Удалить</Button>
           </div> 

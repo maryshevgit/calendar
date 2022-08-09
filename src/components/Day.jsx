@@ -18,7 +18,7 @@ const Day = ({col, index, daysShort, i }) => {
     }, [indexItem])
 
   return (
-    <div 
+    <td  
         key={col.date} 
         className={`calendar__item ${findItem[0] ? 'hoverFilled' : 'hoverEmpty'}`} 
         onClick={() => dispatch(selectModal(col.date))} 
@@ -57,7 +57,7 @@ const Day = ({col, index, daysShort, i }) => {
                 setActive={setActive} 
             />
         </div>
-    </div>
+    </td>
   )
 }
 

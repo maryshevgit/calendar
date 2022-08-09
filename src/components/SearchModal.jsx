@@ -20,8 +20,8 @@ const SearchModal = ({ active, search }) => {
             <div className='modal__body search_modal__body'>
                 {search(selectItem).map(item =>
                     <div className='search_modal__info' 
-                         onClick={() => selectEvent(item.select)}
-                         key={item.select}
+                        onClick={() => selectEvent(item.select)}
+                        key={item.select}
                     >
                         <div className='search_modal__event'>
                             {item.event}

@@ -35,17 +35,19 @@ const Calendar = () => {
                 Сегодня
             </Button>
         </div>
-        <div className="calendar__body">
-            {
-              Object.values(calendarRows).map((cols, i) => {
-                return <div key={cols[0].date} className='calendar__cols'>
-                  {cols.map((col, index) => (
-                      <Day key={col.date} col={col} index={index} i={i} daysShort={daysShort} />
-                  ))}
-                </div>
-              })
-            }
-          </div>
+        <table className="calendar__body">
+          <tbody>
+              {
+                Object.values(calendarRows).map((cols, i) => {
+                  return <tr key={cols[0].date} className='calendar__cols'>
+                    {cols.map((col, index) => (
+                        <Day key={col.date} col={col} index={index} i={i} daysShort={daysShort} />
+                    ))}
+                  </tr>
+                })
+              }
+          </tbody>
+        </table>
     </div>
   )
 }

@@ -8,7 +8,7 @@ import { addSelectItem, selectModal } from '../redux/modalSlice'
 import { month } from '../hooks/useCalendar'
 
 const MiniModal = ({active, setActive}) => {
-    const [value, setValue] = useState()
+    const [value, setValue] = useState('')
     const dispatch = useDispatch()
     const closeModal = () => {
         setActive(!active)
@@ -18,6 +18,7 @@ const MiniModal = ({active, setActive}) => {
     let year = today.getFullYear();
     
     const newValue = value && value.split(",")
+    console.log(newValue)
     
     const date = newValue && newValue[1] && newValue[0].split(" ")
 
@@ -61,13 +62,16 @@ const MiniModal = ({active, setActive}) => {
                 <Input 
                   value={value} 
                   onChange={e => setValue(e.target.value)} 
-                  className='input'
+                  className={`input ${(newValue && newValue.length <= 2) || newValue.length > 3 ? 'wrong_input' : '' }`}
                   placeholder='15 марта (год), описание, событие' 
                 />
             </div>
           </div>
           <div className='modal__buttons'>
-            <Button className={`calendar__today ${newValue && newValue.length <= 3 && newValue.length >= 3 ? 'disabled_button' : ''}`} onClick={addEvent}>Создать</Button>
+            <Button 
+              className={`calendar__today ${(newValue && newValue.length <= 2) || newValue.length > 3 ? 'disabled_button' : ''}`} 
+              onClick={addEvent}
+            >Создать</Button>
           </div> 
         </div>
     </div>
