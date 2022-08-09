@@ -1,4 +1,4 @@
-# My Food-store (https://maryshevgit.github.io/calendar)
+# My Calendar (https://maryshevgit.github.io/calendar)
 
 ## В проекте реализовано:
 
