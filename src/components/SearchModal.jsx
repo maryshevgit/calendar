@@ -6,11 +6,11 @@ import {ReactComponent as Arrow} from '../assets/arrow.svg'
 const SearchModal = ({ active, search }) => {
   const selectItem = useSelector(state => state.modal.selectItem)
   const dispatch = useDispatch()
-  console.log(selectItem)
   
     const selectEvent = (id) => {
         dispatch(selectModal(id))
     }
+
 
     return (
         <div className={`search__modal ${active && selectItem.length !== 0 ? 'active' : ''}`}  >
