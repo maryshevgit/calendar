@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/calendar/static/css/main.a0db1edf.css",
-    "main.js": "/calendar/static/js/main.d91e2bb5.js",
+    "main.css": "/calendar/static/css/main.3a8a78b1.css",
+    "main.js": "/calendar/static/js/main.bf64af6b.js",
     "static/media/cancel.svg": "/calendar/static/media/cancel.284029e4dab4f32f54a5c47fcbe73721.svg",
     "static/media/search.svg": "/calendar/static/media/search.d593961f6f5051dcba7127e0c5d99f2d.svg",
     "static/media/arrow.svg": "/calendar/static/media/arrow.bd51d0ad7f978f000be57d2971e6bf2b.svg",
     "index.html": "/calendar/index.html",
-    "main.a0db1edf.css.map": "/calendar/static/css/main.a0db1edf.css.map",
-    "main.d91e2bb5.js.map": "/calendar/static/js/main.d91e2bb5.js.map"
+    "main.3a8a78b1.css.map": "/calendar/static/css/main.3a8a78b1.css.map",
+    "main.bf64af6b.js.map": "/calendar/static/js/main.bf64af6b.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0db1edf.css",
-    "static/js/main.d91e2bb5.js"
+    "static/css/main.3a8a78b1.css",
+    "static/js/main.bf64af6b.js"
   ]
 }
